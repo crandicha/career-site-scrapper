@@ -1,9 +1,14 @@
 import { chromium } from 'playwright'
 
 export const scrape = async (
-  url = 'https://careers.mercari.com/en/jobs/',
-  text = 'frontend'
+  url = process.env.TARGET_URL || '',
+  text = process.env.TARGET_WORD || ''
 ) => {
+  if (!url || !text) {
+    throw new Error(
+      'TARGET_URL and TARGET_WORD must be set in the environment variables'
+    )
+  }
   const browser = await chromium.launch()
   const page = await browser.newPage()
 

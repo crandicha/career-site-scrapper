@@ -8,9 +8,11 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "dotenv": "^16.5.0",
     "playwright": "^1.53.1"
   },
   "devDependencies": {
+    "@types/node": "^24.0.4",
     "typescript": "^5.8.3"
   }
 }
