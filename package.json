@@ -1,5 +1,5 @@
 {
-  "name": "mercari-career-checker",
+  "name": "career-site-scrapper",
   "version": "1.0.0",
   "scripts": {
     "scrape": "tsc && node dist/index.js"
