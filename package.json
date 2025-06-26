@@ -1,0 +1,16 @@
+{
+  "name": "mercari-career-checker",
+  "version": "1.0.0",
+  "scripts": {
+    "scrape": "tsc && node dist/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "playwright": "^1.53.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  }
+}
