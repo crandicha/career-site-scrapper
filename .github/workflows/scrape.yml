@@ -9,6 +9,12 @@ jobs:
   scrape:
     runs-on: ubuntu-latest
 
+    env:
+      TARGET_URL: ${{ secrets.TARGET_URL }}
+      TARGET_WORD: ${{ secrets.TARGET_WORD }}
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -33,8 +39,4 @@ jobs:
         run: npx playwright install --with-deps
 
       - name: Run scraper
-        run: TARGET_URL=${{ secrets.TARGET_URL }} \
-          API_KEY=${{ secrets.API_KEY }} \
-          TELEGRAM_BOT_TOKEN=${{ secrets.TELEGRAM_BOT_TOKEN }} \
-          TELEGRAM_CHAT_ID=${{ secrets.TELEGRAM_CHAT_ID }} \
-          npm run scrape
+        run: npm run scrape

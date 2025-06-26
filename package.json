@@ -2,13 +2,13 @@
   "name": "career-site-scrapper",
   "version": "1.0.0",
   "scripts": {
+    "dev": "tsc && node --env-file=.env dist/index.js",
     "scrape": "tsc && node dist/index.js"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "dotenv": "^16.5.0",
     "playwright": "^1.53.1"
   },
   "devDependencies": {

@@ -1,10 +1,5 @@
 import { notify } from './notify'
 import { scrape } from './scrape'
-import { config } from 'dotenv'
-
-config({
-  path: '.env',
-})
 ;(async () => {
   try {
     const occurrences = await scrape()
