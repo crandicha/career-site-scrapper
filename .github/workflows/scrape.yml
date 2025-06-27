@@ -3,7 +3,7 @@ name: Run Playwright Scraper
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 * * * 1-5' # Every hour on weekdays
+    - cron: '0 */6 * * 1-5' # Every 6 hour on weekdays
 
 jobs:
   scrape:
