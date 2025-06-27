@@ -4,6 +4,10 @@ import { scrape } from './scrape'
   try {
     const occurrences = await scrape()
 
+    occurrences.forEach((occurrence) => {
+      console.log(`${occurrence.url}: ${occurrence.count}`)
+    })
+
     const nonEmptyOccurrences = occurrences.filter(
       (occurrence) => occurrence.count > 0
     )
