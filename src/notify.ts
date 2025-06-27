@@ -1,7 +1,7 @@
-export const notify = async (value: string | number) => {
+export const notify = async (targetUrl: string, value: string | number) => {
   const url = `https://api.telegram.org/bot${process.env.TELEGRAM_BOT_TOKEN}/sendMessage`
   const chatId = process.env.TELEGRAM_CHAT_ID
-  const message = `Found ${value} occurrences of the target word (${process.env.TARGET_WORD}). Searching at ${process.env.TARGET_URL}`
+  const message = `Found ${value} occurrences of the target word (${process.env.TARGET_WORD}). Searching at ${targetUrl}`
 
   if (!chatId || !process.env.TELEGRAM_BOT_TOKEN) {
     throw new Error(
@@ -10,6 +10,7 @@ export const notify = async (value: string | number) => {
   }
 
   try {
+    console.log(`Sending notification: ${message}`)
     await fetch(url, {
       method: 'POST',
       headers: {
