@@ -6,7 +6,7 @@ import { scrape } from './scrape'
 
     occurrences.forEach((occurrence) => {
       console.log(
-        `url: ${occurrence.url}, text: ${process.env.TARGET_WORD}, count: ${occurrence.count}`
+        `url: ${occurrence.url} , text: ${process.env.TARGET_WORD}, count: ${occurrence.count}`
       )
     })
 
