@@ -4,7 +4,7 @@ const URL_SEPARATOR = '---'
 
 export const scrape = async (
   url = process.env.TARGET_URL || '',
-  text = 'software'
+  text = process.env.TARGET_WORD || ''
 ) => {
   if (!url || !text) {
     throw new Error(
