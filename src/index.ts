@@ -5,7 +5,9 @@ import { scrape } from './scrape'
     const occurrences = await scrape()
 
     occurrences.forEach((occurrence) => {
-      console.log(`${occurrence.url}: ${occurrence.count}`)
+      console.log(
+        `url: ${occurrence.url}, text: ${process.env.TARGET_WORD}, count: ${occurrence.count}`
+      )
     })
 
     const nonEmptyOccurrences = occurrences.filter(
